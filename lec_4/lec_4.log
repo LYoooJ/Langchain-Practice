@@ -1,0 +1,101 @@
+INFO:root:Prompt Template result: text='tell me a joke about soccer'
+INFO:root:Chat Prompt Template result: messages=[HumanMessage(content='tell me a joke about soccer')]
+INFO:root:model_name: gpt-3.5-turbo-instruct
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+INFO:root:Prompt: 
+너는 요리사야. 내가 가진 재료들로 만들 수 있는 요리를 추천하고, 그 요리의 레시피를 알려줘.
+내가 가진 재료는 아래와 같아.
+
+<재료>
+양파, 계란, 사과, 빵
+
+INFO:root:Answer: 
+너는 '양파 계란말이'를 만들 수 있어.
+레시피는 아래와 같아.
+
+1. 양파를 곱게 다진다.
+2. 계란 2개를 잘 풀어서 소금을 조금 넣고 섞는다.
+3. 팬에 식용유를 두르고 양파를 볶다가 계란을 넣는다.
+4. 양파와 계란이 어느 정도 익으면 넓은 접시에 빵을 놓는다.
+5. 양파 계란말이를 빵 위에 얹고 그 위에 사과를 썰어서 올린다.
+6. 빵을 접으면 그 아래에 양파 계란말이와 사과가 꽉 차게 된다.
+7. 겅장장도 뿌린다면 완성이야!
+INFO:root:model_name: gpt-3.5-turbo
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Prompt: [SystemMessage(content='\n너는 요리사야. 내가 가진 재료들로 만들 수 있는 요리를 추천하고, 그 요리의 레시피를 알려줘.\n내가 가진 재료는 아래와 같아.\n\n<재료>\n양파, 계란, 사과, 빵\n'), HumanMessage(content='양파, 계란, 사과, 빵')]
+INFO:root:Answer: content='가지고 있는 재료로 만들 수 있는 요리 중 하나는 "양파 계란말이"야. 이 요리는 양파와 계란을 함께 볶아서 만드는 간단하면서도 맛있는 요리야. 빵은 따로 사용하지 않지만, 양파 계란말이와 함께 먹으면 좋을 거야.\n\n양파 계란말이의 레시피는 아래와 같아.\n\n<양파 계란말이 레시피>\n1. 양파를 깍두기 형태로 썰어줘.\n2. 계란을 풀어서 소금과 후추로 간을 해줘.\n3. 팬에 식용유를 두르고 양파를 넣어 중간 불에서 볶아줘.\n4. 양파가 투명해질 때까지 볶은 후, 계란을 부어줘.\n5. 계란이 익을 때까지 저어가며 볶아줘.\n6. 양파 계란말이가 완성되면 그릇에 담아서 서빙해줘.\n\n양파 계란말이는 밥과 함께 먹으면 맛있어. 좀 더 매콤하게 먹고 싶다면 고추장을 추가해도 좋아. 즐거운 요리 시간 되길 바래!'
+INFO:root:Question: 아이유로 삼행시 만들어줘
+
+        아: 아이유는
+        이: 이런 강의를 들을 이
+        유: 유가 없다.
+        
+
+Question: 김민수로 삼행시 만들어줘
+
+        김: 김치는 맛있다
+        민: 민달팽이도 좋아하는 김치!
+        수: 수억을 줘도 김치는 내꺼!
+        
+
+Question: 호날두로 삼행시 만들어줘
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+INFO:root:answer for 호날두로 삼행시 만들어줘: ")
+
+        self.assertTrue("손연재 : 아니 유채꽃이 피지 않으면 흰 양복을 벗고 삽니다 젠호날두 : 테라스에서 쇠뼈로 쓰는 건 못 해요 '효율수도'에요 젠호날두 : 대한민국에서 자원 물류와 광업 재료로 삽니다" in testReactions)
+
+    def testGetRandomFourDigits(self):
+        # 숫자
+        testReactions = self.apiStock.getCurrentPrice("충청도로 50")
+        print(testReactions)
+        itemIndex = 0
+        for i, reaction in enumerate(testReactions):
+            if ("종목명" in reaction):
+                # 4자리
+                self.assertTrue(len(reaction["종목코드"]) == 4)
+                itemIndex = i
+
+        testPrice = testReactions[itemIndex]["현재주가"].replace(',', '')
+        #print("하루종일
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+INFO:root:answer for Question: 아이유로 삼행시 만들어줘
+
+        아: 아이유는
+        이: 이런 강의를 들을 이
+        유: 유가 없다.
+        
+
+Question: 김민수로 삼행시 만들어줘
+
+        김: 김치는 맛있다
+        민: 민달팽이도 좋아하는 김치!
+        수: 수억을 줘도 김치는 내꺼!
+        
+
+Question: 호날두로 삼행시 만들어줘: 
+
+        호: 호기심 가득한 뛰어난 축구 실력
+        날: 날마다 빛나는 선수, 호날두!
+        드: 드리우스, 그리고 괴물같은 드리블.
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:root:주어진 입력에 대해 반대의 의미를 가진 단어를 출력해줘
+
+input: 긴 기차
+output: 짧은 기차
+
+input: 큰 비행기
+Output:
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+INFO:root: 작은 비행기 
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+INFO:openai._base_client:Retrying request to /completions in 20.000000 seconds
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+INFO:root:input: 영화 5개를 추천해줘.
+Your response should be a list of comma separated values, eg: `foo, bar, baz`
+INFO:root:output:  
+
+Top Gun, Avatar, Titanic, Inception, Avatar2.
+INFO:root:['Top Gun', 'Avatar', 'Titanic', 'Inception', 'Avatar2.']
